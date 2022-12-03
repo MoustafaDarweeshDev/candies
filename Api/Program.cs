@@ -15,6 +15,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+//
+using (var serviceScope = app.Services.CreateScope())
+{
+    var services = serviceScope.ServiceProvider;
+
+    var dbcontext = services.GetRequiredService<StoreContext>();
+
+    await dbcontext.Database.MigrateAsync();
+
+    var conn = dbcontext.Database.GetConnectionString();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

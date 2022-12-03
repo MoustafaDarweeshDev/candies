@@ -1,5 +1,6 @@
 ﻿using core.Entites;
 using core.Interfaces;
+using core.Specifications;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,5 +27,17 @@ namespace Infrastructure.Data
         {
             return await context.Set<T>().ToListAsync();
         }
+
+        public async Task<IReadOnlyList<T>> ListAllAsyncWithSpec(ISpecification<T> spec = null)
+        {
+            return await ApplySpecifications(spec).ToListAsync();
+        }
+
+
+        private IQueryable<T> ApplySpecifications(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQury(context.Set<T>().AsQueryable(), spec);   
+        }
+
     }
 }

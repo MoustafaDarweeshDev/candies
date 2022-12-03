@@ -1,5 +1,6 @@
 ﻿using core.Entites;
 using core.Interfaces;
+using core.Specifications;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,23 +17,41 @@ namespace Api.Controllers
             this.typeRepo = typeRepo;
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public async Task<IReadOnlyList<Product>> GetAllProducts()
+        //{
+        //    return await productRepo.ListAllAsync();
+        //}
+
+        //[HttpGet("{id}")]
+        //public async Task<Product> GetProduct(int id)
+        //{
+        //    return await productRepo.GetByIdAsync(id);
+        //}
+
+        //[HttpGet("types")]
+        //public async Task<IReadOnlyList<ProductType>> GetAllProductsTypes()
+        //{
+        //    return await typeRepo.ListAllAsync();
+        //}
+
+        [HttpGet("sec")]
         public async Task<IReadOnlyList<Product>> GetAllProducts()
         {
-            return await productRepo.ListAllAsync();
+
+            var productSpec = new ProductWithTypesSpecifications();
+
+            return await productRepo.ListAllAsyncWithSpec(productSpec);
         }
 
-        [HttpGet("{id}")]
-        public async Task<Product> GetProduct(int id)
-        {
-            return await productRepo.GetByIdAsync(id);
-        }
+        //[HttpGet("{id}")]
+        //public async Task<Product> GetProduct(int id)
+        //{
+        //    var productSpec = new ProductWithTypesSpecifications(id);
+        //    var product = await productRepo.ListAllAsyncWithSpec(productSpec);
 
-        [HttpGet("types")]
-        public async Task<IReadOnlyList<ProductType>> GetAllProductsTypes()
-        {
-            return await typeRepo.ListAllAsync();
-        }
+        //    return product;
+        //}
 
 
     }

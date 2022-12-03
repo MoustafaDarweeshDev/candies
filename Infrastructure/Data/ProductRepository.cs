@@ -11,21 +11,38 @@ namespace Infrastructure.Data
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly StoreContext _contex;
+        private readonly StoreContext context;
 
-        public ProductRepository(StoreContext contex)
+
+        //private readonly StoreContext _contex;
+
+        //public ProductRepository(StoreContext contex)
+        //{
+        //    _contex = contex;
+        //}
+        //public async Task<Product> GetProductAsync(int id)
+        //{
+        //    return await _contex.Products.Include(e=>e.ProductType).FirstOrDefaultAsync(e=>e.Id == id);
+        //}
+
+        //public async Task<IReadOnlyList<Product>> GetProductsAsync()
+        //{
+        //    var products = await _contex.Products.Include(e => e.ProductType).ToListAsync();
+        //    return products;
+        //}
+
+        public ProductRepository(StoreContext context)
         {
-            _contex = contex;
+            this.context = context;
         }
         public async Task<Product> GetProductAsync(int id)
         {
-            return await _contex.Products.Include(e=>e.ProductType).FirstOrDefaultAsync(e=>e.Id == id);
+            return await context.Products.FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<Product>> GetProductsAsync()
+        public  async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            var products = await _contex.Products.Include(e => e.ProductType).ToListAsync();
-            return products;
+            return await context.Products.ToListAsync();
         }
     }
 }
