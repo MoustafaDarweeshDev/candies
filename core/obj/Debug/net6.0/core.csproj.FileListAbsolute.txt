@@ -10,3 +10,15 @@ T:\_CODE___\Projects\Candies Store\Api\core\obj\Debug\net6.0\core.dll
 T:\_CODE___\Projects\Candies Store\Api\core\obj\Debug\net6.0\refint\core.dll
 T:\_CODE___\Projects\Candies Store\Api\core\obj\Debug\net6.0\core.pdb
 T:\_CODE___\Projects\Candies Store\Api\core\obj\Debug\net6.0\ref\core.dll
+D:\iti\Angular Projects\Candies\candies\core\bin\Debug\net6.0\core.deps.json
+D:\iti\Angular Projects\Candies\candies\core\bin\Debug\net6.0\core.dll
+D:\iti\Angular Projects\Candies\candies\core\bin\Debug\net6.0\core.pdb
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.csproj.AssemblyReference.cache
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.AssemblyInfoInputs.cache
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.AssemblyInfo.cs
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.csproj.CoreCompileInputs.cache
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.dll
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\refint\core.dll
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\core.pdb
+D:\iti\Angular Projects\Candies\candies\core\obj\Debug\net6.0\ref\core.dll

@@ -15,6 +15,10 @@ namespace core.Entites
         public decimal Price { get; set; }
         public ProductType ProductType { get; set; }
         public int ProductTypeId { get; set; }
+        public review review { get; set; }
+        public Customer Customer { get; set; }
+
+
 
     }
 }
